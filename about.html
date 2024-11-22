@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Neeraj's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f8fb; /* Light blue background */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #0056b3; /* Custom background color */
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important; /* White text color */
+        }
+
+        .nav-link.active {
+            font-weight: bold; /* Bold text for active link */
+            text-decoration: underline; /* Underline for active link */
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem; /* Size of the close button */
+            position: absolute; /* Position it at the top right */
+            top: 20px;
+            right: 20px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        /* Fullscreen Navbar */
+        .fullscreen-navbar {
+            position: fixed; /* Fix to viewport */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0056b3; /* Same custom background color */
+            z-index: 1040; /* Above other elements */
+            display: none; /* Initially hidden */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            text-align: center; /* Center text */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        /* Show fullscreen navbar */
+        .fullscreen-navbar.show {
+            display: flex; /* Show navbar */
+        }
+
+        /* Navbar link styles in fullscreen */
+        .fullscreen-navbar .nav-link {
+            color: white !important; /* White text color for links in fullscreen */
+            font-size: 24px; /* Increase font size for better visibility */
+            margin: 10px 0; /* Margin for spacing between links */
+        }
+
+        /* About Section */
+        #about {
+            padding: 40px;
+            background-color: #fff; /* White background for about section */
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Neeraj Prajapat</a>
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Fullscreen Modal for Mobile -->
+<div class="fullscreen-navbar" id="fullscreenNavbar">
+    <button class="close-btn" aria-label="Close">✖</button>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+        </li>
+    </ul>
+</div>
+
+<!-- About Section -->
+<section id="about" class="container mt-4">
+    <h2>About Me</h2>
+    <p>Hello! I'm Neeraj Prajapat, a passionate Full Stack Developer with a keen interest in algo trading. I love creating efficient and scalable web applications and exploring the world of automated trading strategies. My journey in tech has equipped me with the skills to develop full-fledged applications and delve into complex algorithms.</p>
+    <p>When I'm not coding, I enjoy learning about new technologies, working on personal projects, and sharing my knowledge with others. I'm always looking for new challenges and opportunities to grow in my field.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Neeraj Prajapat. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JS and custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Ensure the DOM is fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('.navbar-toggler');
+        const fullscreenNavbar = document.querySelector('.fullscreen-navbar');
+        const closeButton = document.querySelector('.close-btn');
+
+        // Check if elements exist before adding event listeners
+        if (toggleButton && fullscreenNavbar && closeButton) {
+            // Toggle the fullscreen navbar on toggle button click
+            toggleButton.addEventListener('click', () => {
+                fullscreenNavbar.classList.toggle('show');
+            });
+
+            // Close the fullscreen navbar on close button click
+            closeButton.addEventListener('click', () => {
+                fullscreenNavbar.classList.remove('show');
+            });
+        } else {
+            console.warn('Navbar elements not found. Please check your HTML structure.');
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
