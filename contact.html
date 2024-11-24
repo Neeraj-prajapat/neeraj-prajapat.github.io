@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact me to collaborate, discuss projects, or provide feedback.">
+    <meta name="keywords" content="Contact Page, Collaborate, Projects, Reach Out">
+    <meta name="author" content="Neeraj Prajapat">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Contact Me">
+    <meta property="og:description" content="Feel free to contact me using this page.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neeraj-prajapat.github.io/contact">
+    <!-- <meta property="og:image" content="https://yourwebsite.com/contact-thumbnail.jpg"> -->
     <title>Contact Me</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f8fb; /* Light blue background */
         }
+
+        a{
+            text-decoration: none;
+            display: inline-block;
+          }
 
         /* Navbar Styling */
         .navbar {
@@ -81,13 +98,86 @@
         }
 
         /* Footer */
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center;
+        .footer-bg {
+            background-color: #0a1435;
+            padding: 6rem 0 2rem 0;
+            color: white;
+          }
+          
+          .footer-social-icons {
+            display: flex;
+            gap: 15px;
+          }
+          
+          .footer-social-icons div {
+            padding: 1rem;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+          }
+          
+          .footer-social-icons .icons {
+            color: #ffffff;
+            font-size: 2.4rem;
+            cursor: pointer;
+          }
+
+          .mail-icons {
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+          }
+          
+          footer h3,
+          footer h4,
+          footer p,
+          footer a {
+            color: white;
+          }
+          
+          footer .subscribe-form input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+          }
+          
+          footer .subscribe-form input[type="submit"] {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
             background-color: #007bff;
             color: white;
-        }
+            border: none;
+            cursor: pointer;
+          }
+          
+          footer .subscribe-form input[type="submit"]:hover {
+            background-color: #0056b3;
+          }
+          
+          @media (max-width: 768px) {
+            .footer-bg {
+              padding: 5rem 1rem;
+            }
+          
+            .footer-social-icons {
+              gap: 10px;
+            }
+          
+            .footer-social-icons .icons {
+              font-size: 2rem;
+            }
+          
+            .footer-social-icons div {
+              padding: 0.8rem;
+            }
+          
+            .footer-social-icons a {
+              text-decoration: none;
+            }
+          }
+          
     </style>
 </head>
 <body>
@@ -95,7 +185,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Neeraj Prajapat</a>
+        <a class="navbar-brand ms-2" href="/">Neeraj Prajapat</a>
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -131,30 +221,170 @@
     </ul>
 </div>
 
+
 <!-- Contact Section -->
-<section id="contact" class="container mt-4">
-    <h2>Contact Me</h2>
-    <form>
+<section id="contact" class="container mt-5 mb-5" itemscope itemtype="https://schema.org/ContactPage">
+    <meta itemprop="name" content="Contact Page">
+    <h2 itemprop="headline">Contact Me</h2>
+    <form action="https://formspree.io/f/myzgwjdo" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
         </div>
         <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="3"></textarea>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Write your message here" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
 </section>
 
+
 <!-- Footer -->
-<footer>
+<!-- <footer>
     <p>&copy; 2024 Neeraj Prajapat. All Rights Reserved.</p>
+</footer> -->
+
+<!-- Footer -->
+<!-- <footer>
+    <p>&copy; 2024 Neeraj Prajapat. All Rights Reserved.</p>
+    <div class="social-links">
+        <a href="https://github.com/your-username" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+        
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+    </div>
+    <div class="contact-info">
+        <a href="mailto:your-email@example.com">
+            <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="tel:+1234567890">
+            <i class="fas fa-phone"></i> Call Me
+        </a>
+    </div>
+</footer> -->
+
+<footer class="footer-bg">
+    <div class="container">
+        <div class="row">
+
+            <!-- Company Info -->
+            <div class="col-lg-3 col-12">
+                <h3 class="text-center text-lg-start">Neeraj Prajapat</h3>
+                <a href="mailto:neerajkumar001122op@gmail.com ">
+                    <i class="fas fa-envelope mail-icons"></i> neerajkumar001122op@gmail.com
+                </a>
+            </div>
+
+            <!-- Subscription Form -->
+            <div class="col-lg-3 my-5 my-lg-0">
+                <h3 class="text-center text-lg-start">Subscribe to get important updates</h3>
+                <form action="#">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="YOUR E-MAIL"
+                        class="form-control mb-2"
+                    />
+                    <input
+                        type="submit"
+                        value="Subscribe"
+                        class="btn btn-primary mx-auto"
+                    />
+                </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-lg-3 col-6">
+                <h3>Follow Us</h3>
+                <div class="footer-social-icons">
+                    <a href="https://github.com/Neeraj-prajapat" target="_blank">
+                        <i class="fab fa-github icons"></i>
+                    </a>
+                    
+                    <!-- <i class="fab fa-instagram icons"></i> -->
+                    <a href="https://www.linkedin.com/in/neeraj-kumar-4b4823332/" target="_blank">
+                        <i class="fab fa-linkedin icons"></i>
+                      </a>
+                    <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-light"
+                    >
+                        <i class="fab fa-youtube icons"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-6">
+                <h3> <i class="fas fa-phone"></i> Call Us</h3>
+                <h4>+91 7689005391</h4>
+            </div>
+
+        </div>
+
+        <hr class="my-4 border-light" />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <p>
+                        &copy; <span id="year"></span> Neeraj Prajapat. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center align-items-md-end mt-3 mt-md-0">
+                    <a href="/privacy-policy.html" class=" privacy-link">
+                        <p class="mb-0">Privacy Policy</p>
+                    </a>
+                    <a href="/terms-and-conditions.html" class=" privacy-link">
+                        <p class="mb-0">Terms & Conditions</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Bootstrap JS and custom JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -180,7 +410,20 @@
             console.warn('Navbar elements not found. Please check your HTML structure.');
         }
     });
+
+    // Update current year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Me",
+      "description": "Contact me for collaborations, inquiries, or feedback.",
+      "url": "https://neeraj-prajapat.github.io/contact"
+    }
+    </script>
+    
 </body>
 </html>
 

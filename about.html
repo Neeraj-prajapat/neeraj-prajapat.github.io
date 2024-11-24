@@ -6,11 +6,18 @@
     <title>About - Neeraj's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f8fb; /* Light blue background */
         }
+
+        a{
+            text-decoration: none;
+            display: inline-block;
+          }
 
         /* Navbar Styling */
         .navbar {
@@ -84,13 +91,173 @@
         }
 
         /* Footer */
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center;
+        .footer-bg {
+            background-color: #0a1435;
+            padding: 6rem 0 2rem 0;
+            color: white;
+          }
+          
+          .footer-social-icons {
+            display: flex;
+            gap: 15px;
+          }
+          
+          .footer-social-icons div {
+            padding: 1rem;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+          }
+          
+          .footer-social-icons .icons {
+            color: #ffffff;
+            font-size: 2.4rem;
+            cursor: pointer;
+          }
+
+          .mail-icons {
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+          }
+          
+          footer h3,
+          footer h4,
+          footer p,
+          footer a {
+            color: white;
+          }
+          
+          footer .subscribe-form input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+          }
+          
+          footer .subscribe-form input[type="submit"] {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
             background-color: #007bff;
             color: white;
-        }
+            border: none;
+            cursor: pointer;
+          }
+          
+          footer .subscribe-form input[type="submit"]:hover {
+            background-color: #0056b3;
+          }
+          
+          @media (max-width: 768px) {
+            .footer-bg {
+              padding: 5rem 1rem;
+            }
+          
+            .footer-social-icons {
+              gap: 10px;
+            }
+          
+            .footer-social-icons .icons {
+              font-size: 2rem;
+            }
+          
+            .footer-social-icons div {
+              padding: 0.8rem;
+            }
+          
+            .footer-social-icons a {
+              text-decoration: none;
+            }
+          }
+            /* Section Styling */
+            #about {
+                background-color: #e7f0f9; /* Light blue background */
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for section */
+            }
+        
+            /* Heading */
+            #about h3 {
+                font-weight: bold;
+                color: #343a40; /* Dark gray */
+                letter-spacing: 1px;
+            }
+        
+            /* List Group Styling */
+            .list-group {
+                border: none;
+                overflow: hidden;
+            }
+        
+            .list-group-item-skill {
+                transition: all 0.4s ease-in-out;
+                background: linear-gradient(to right, #ffffff, #f4f8fb);
+                color: #333;
+            }
+            
+            .list-group-item-skill:hover {
+                background: #007bff; /* Blue background on hover */
+                color: white; /* White text on hover */
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow on hover */
+            }
+            /* Coursework Section Styling */
+         
+
+            /* Heading */
+            #coursework {
+                background-color: #f0f8ff; /* Light background color */
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for coursework section */
+            }
+            
+            /* Technical Skills Section Styling */
+            #technical-skills {
+                background-color: #f0f8ff; /* Same light background color as coursework */
+                padding: 40px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same soft shadow as coursework */
+            }
+
+
+            .list-group-item-coursework {
+                transition: all 0.4s ease-in-out;
+                background: linear-gradient(to right, #ffffff, #f4f8fb);
+                color: #333;
+            }
+
+            .list-group-item-coursework:hover {
+                background: #007bff; /* Blue background on hover */
+                color: white; /* White text on hover */
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow on hover */
+            }
+        
+            /* Shadow for List Group */
+            .shadow {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        
+            /* Animation Delays */
+            [data-aos="fade-right"], [data-aos="fade-left"] {
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all 0.8s ease-in-out;
+            }
+        
+            /* Custom style for the entire section */
+            #about h2 {
+                letter-spacing: 2px;
+            }
+        
+            .yourself {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: #555; /* Dark gray text for readability */
+            }
     </style>
 </head>
 <body>
@@ -98,7 +265,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Neeraj Prajapat</a>
+        <a class="navbar-brand ms-2" href="/">Neeraj Prajapat</a>
         <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -135,19 +302,185 @@
 </div>
 
 <!-- About Section -->
-<section id="about" class="container mt-4">
+<!-- <section id="about" class="container mt-4">
     <h2>About Me</h2>
-    <p>Hello! I'm Neeraj Prajapat, a passionate Full Stack Developer with a keen interest in algo trading. I love creating efficient and scalable web applications and exploring the world of automated trading strategies. My journey in tech has equipped me with the skills to develop full-fledged applications and delve into complex algorithms.</p>
-    <p>When I'm not coding, I enjoy learning about new technologies, working on personal projects, and sharing my knowledge with others. I'm always looking for new challenges and opportunities to grow in my field.</p>
+    <p>Hello! I'm Neeraj Prajapat, a passionate Full Stack Developer pursuing bachelor's from <b>IIT Madras</b> with a keen interest in algo trading. I love creating efficient and scalable web applications and exploring the world of automated trading strategies. My journey in tech has equipped me with the skills to develop full-fledged applications and delve into complex algorithms.</p>
+    <p> I enjoy learning about new technologies, working on personal projects, and sharing my knowledge with others. I'm always looking for new challenges and opportunities to grow in my field.</p>
+</section> -->
+
+
+<section id="about" class="container mt-4">
+    <h2 class="mb-4">About Me</h2>
+    <!-- <p>
+        Hello! I'm <b>Neeraj Prajapat</b>, a passionate Full Stack Developer pursuing bachelor's from 
+        <b>IIT Madras</b> with a keen interest in algo trading. I love creating efficient and scalable web 
+        applications and exploring the world of automated trading strategies.
+    </p> -->
+    <p class="yourself">
+        Hello! I'm <b>Neeraj Prajapat</b>, a passionate Full Stack Developer pursuing a bachelor's from 
+        <b>IIT Madras</b> with a keen interest in algorithmic trading. I am particularly fascinated by the 
+        application of automated strategies in the world of finance and strive to create efficient, scalable web 
+        applications to support this field. My passion for building innovative solutions fuels my research into the 
+        optimization of trading algorithms.
+    </p>
+    <p class="yourself">
+        I enjoy learning about new technologies, working on personal projects, and sharing my knowledge with 
+        others. I'm always looking for new challenges and opportunities to grow in my field.
+    </p>
+
+   
+    <div id="technical-skills" class="container mt-5">
+        <h3 class="text-center  mb-4">Technical Skills</h3>
+        <div class="row">
+            <!-- First Column -->
+            <div class="col-md-6 mb-4" data-aos="fade-up">
+                <ul class="list-group list-group-flush shadow rounded bg-light">
+                    <li class="list-group-item list-group-item-skill">HTML</li>
+                    <li class="list-group-item list-group-item-skill">CSS</li>
+                    <li class="list-group-item list-group-item-skill">Bootstrap</li>
+                    <li class="list-group-item list-group-item-skill">JavaScript</li>
+                    <li class="list-group-item list-group-item-skill">Python</li>
+                    <li class="list-group-item list-group-item-skill">NoSQL</li>
+                </ul>
+            </div>
+            <!-- Second Column -->
+            <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <ul class="list-group list-group-flush shadow rounded bg-light">
+                    <li class="list-group-item list-group-item-skill">React.js</li>
+                    <li class="list-group-item list-group-item-skill">Next.js</li>
+                    <li class="list-group-item list-group-item-skill">Express.js</li>
+                    <li class="list-group-item list-group-item-skill">Node.js</li>
+                    <li class="list-group-item list-group-item-skill">MongoDB</li>
+                    <li class="list-group-item list-group-item-skill">Mongoose</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="coursework" class="container mt-4">
+        <h3 class="text-center mb-4">Coursework</h3>
+        <div class="row">
+            <!-- Coursework List Column -->
+            <div class="col-md-6 mb-4" data-aos="fade-up">
+                <ul class="list-group list-group-flush shadow rounded bg-light">
+                    <li class="list-group-item list-group-item-coursework">MERN Stack Development</li>
+                    <li class="list-group-item list-group-item-coursework">Web Development</li>
+                    <li class="list-group-item list-group-item-coursework">SEO Enhancement</li>
+                    <li class="list-group-item list-group-item-coursework">Technical Analysis</li>
+                </ul>
+            </div>
+            <div class="col-md-6 mb-4" data-aos="fade-up">
+                <ul class="list-group list-group-flush shadow rounded bg-light">
+                    <li class="list-group-item list-group-item-coursework">Artificial Intelligence</li>
+                    <li class="list-group-item list-group-item-coursework">Frontend Development</li>
+                    <li class="list-group-item list-group-item-coursework">Backend Development</li>
+                    <li class="list-group-item list-group-item-coursework"> Research Development</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2024 Neeraj Prajapat. All Rights Reserved.</p>
-</footer>
 
+
+
+
+
+
+<!-- Footer -->
+<!-- <footer>
+    <p>&copy; 2024 Neeraj Prajapat. All Rights Reserved.</p>
+</footer> -->
+<footer class="footer-bg">
+    <div class="container">
+        <div class="row">
+
+            <!-- Company Info -->
+            <div class="col-lg-3 col-12">
+                <h3 class="text-center text-lg-start">Neeraj Prajapat</h3>
+                <a href="mailto:neerajkumar001122op@gmail.com ">
+                    <i class="fas fa-envelope mail-icons"></i> neerajkumar001122op@gmail.com
+                </a>
+            </div>
+
+            <!-- Subscription Form -->
+            <div class="col-lg-3 my-5 my-lg-0">
+                <h3 class="text-center text-lg-start">Subscribe to get important updates</h3>
+                <form action="#">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="YOUR E-MAIL"
+                        class="form-control mb-2"
+                    />
+                    <input
+                        type="submit"
+                        value="Subscribe"
+                        class="btn btn-primary mx-auto"
+                    />
+                </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-lg-3 col-6">
+                <h3>Follow Us</h3>
+                <div class="footer-social-icons">
+                    <a href="https://github.com/Neeraj-prajapat" target="_blank">
+                        <i class="fab fa-github icons"></i>
+                    </a>
+                    
+                    <!-- <i class="fab fa-instagram icons"></i> -->
+                    <a href="https://www.linkedin.com/in/neeraj-kumar-4b4823332/" target="_blank">
+                        <i class="fab fa-linkedin icons"></i>
+                      </a>
+                    <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-light"
+                    >
+                        <i class="fab fa-youtube icons"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-6">
+                <h3> <i class="fas fa-phone"></i> Call Us</h3>
+                <h4>+91 7689005391</h4>
+            </div>
+
+        </div>
+
+        <hr class="my-4 border-light" />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <p>
+                        &copy; <span id="year"></span> Neeraj Prajapat. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center align-items-md-end mt-3 mt-md-0">
+                    <a href="/privacy-policy.html" class=" privacy-link">
+                        <p class="mb-0 ">Privacy Policy</p>
+                    </a>
+                    <a href="/terms-and-conditions.html" class=" privacy-link">
+                        <p class="mb-0">Terms & Conditions</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <!-- Bootstrap JS and custom JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <script>
     // Ensure the DOM is fully loaded before running the script
     document.addEventListener('DOMContentLoaded', () => {
@@ -170,8 +503,20 @@
             console.warn('Navbar elements not found. Please check your HTML structure.');
         }
     });
+    
+    // Update current year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Me",
+      "description": "This page provides information about my journey, skills, and projects.",
+      "url": "https://neeraj-prajapat.github.io/about"
+    }
+    </script>
+    
 </body>
 </html>
 
