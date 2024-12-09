@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and Description -->
+    <meta name="description" content="Portfolio of Neeraj Prajapat, a Full Stack Developer and Algo Trading Enthusiast, Deoria, Deoria website developer, Explore projects and contact me.">
+    <meta name="keywords" content="Neeraj Prajapat, Full Stack Developer, Web Developer, React, Node.js, Deoria, Portfolio, Algorithmic Trading">
+
+    <!-- Author -->
+    <meta name="author" content="Neeraj Prajapati">
+
+    <!-- Open Graph for social media -->
+    <meta property="og:title" content="Neeraj's Portfolio">
+    <meta property="og:description" content="Explore Neeraj Prajapat's projects and connect with him.">
+    <meta property="og:image" content="images/neeraj_kumar.jpg">
+    <meta property="og:url" content="https://neeraj-prajapat.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Neeraj Prajapat - Web Developer">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:updated_time" content="2024-11-22T00:00:00Z">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Neeraj's Portfolio">
+    <meta name="twitter:description" content="Explore Neeraj Prajapat's projects and connect with him.">
+    <meta name="twitter:image" content="images/neeraj_kumar.jpg">
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <title>Neeraj Prajapat - Full Stack Developer | Web Developer in Deoria</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f8fb; /* Light blue background */
+        }
+
+        a{
+            text-decoration: none;
+            display: inline-block;
+          }
+
+       /* Navbar Styling */
+       .navbar {
+        background-color: #0056b3; /* Custom background color */
+    }
+
+    .navbar-brand, .nav-link {
+        color: white !important; /* White text color */
+    }
+
+    .nav-link.active {
+        font-weight: bold; /* Bold text for active link */
+        text-decoration: underline; /* Underline for active link */
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem; /* Size of the close button */
+        position: absolute; /* Position it at the top right */
+        top: 20px;
+        right: 20px;
+        cursor: pointer; /* Change cursor to pointer */
+    }
+
+    /* Fullscreen Navbar */
+    .fullscreen-navbar {
+        position: fixed; /* Fix to viewport */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0056b3; /* Same custom background color */
+        z-index: 1040; /* Above other elements */
+        display: none; /* Initially hidden */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        text-align: center; /* Center text */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    /* Show fullscreen navbar */
+    .fullscreen-navbar.show {
+        display: flex; /* Show navbar */
+    }
+
+    /* Navbar link styles in fullscreen */
+    .fullscreen-navbar .nav-link {
+        color: white !important; /* White text color for links in fullscreen */
+        font-size: 24px; /* Increase font size for better visibility */
+        margin: 10px 0; /* Margin for spacing between links */
+    }
+
+
+        
+        /* Profile Section */
+        #profile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007bff; /* Bootstrap blue */
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        #profile h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        #profile p {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #profile {
+                align-items: center; /* Center items */
+                text-align: center; /* Center text for mobile */
+            }
+
+            h1 {
+                font-size: 1.5rem; /* Adjust heading size for mobile */
+            }
+
+            p {
+                font-size: 1rem; /* Adjust paragraph size for mobile */
+            }
+        }
+                /* Projects Section */
+                /* General Styles */
+#projects {
+    margin-top: 50px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.project-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #0056b3;
+}
+
+/* Project Card Link (to ensure links are clickable on the entire card) */
+.project-card-link {
+    display: block;
+    text-decoration: none;
+}
+
+/* Video Styles */
+/* Video Styles */
+/* Video Styles */
+/* Video Container */
+.media-container {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    background-image: url("/projectb-algolyte.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+/* Video Styles */
+.media-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    opacity: 0; /* Hide video by default */
+    pointer-events: none; /* Prevent interaction with video */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Show the video on hover */
+.media-container:hover video {
+    opacity: 1; /* Show the video */
+    pointer-events: all; /* Allow interaction */
+}
+
+/* Responsive Projects Layout */
+.row-cols-1 .col {
+    margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .row-cols-md-3 .col {
+        margin-bottom: 30px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .project-links a {
+        font-size: 1rem;
+    }
+}
+
+                
+
+        /* Footer */
+        .footer-bg {
+            background-color: #0a1435;
+            padding: 6rem 0 2rem 0;
+            color: white;
+          }
+          
+          .footer-social-icons {
+            display: flex;
+            gap: 15px;
+          }
+          
+          .footer-social-icons div {
+            padding: 1rem;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+          }
+          
+          .footer-social-icons .icons {
+            color: #ffffff;
+            font-size: 2.4rem;
+            cursor: pointer;
+          }
+
+          .mail-icons {
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+          }
+          
+          footer h3,
+          footer h4,
+          footer p,
+          footer a {
+            color: white;
+          }
+          
+          footer .subscribe-form input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid #ccc;
+          }
+          
+          footer .subscribe-form input[type="submit"] {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          
+          footer .subscribe-form input[type="submit"]:hover {
+            background-color: #0056b3;
+          }
+          
+          @media (max-width: 768px) {
+            .footer-bg {
+              padding: 5rem 1rem;
+            }
+          
+            .footer-social-icons {
+              gap: 10px;
+            }
+          
+            .footer-social-icons .icons {
+              font-size: 2rem;
+            }
+          
+            .footer-social-icons div {
+              padding: 0.8rem;
+            }
+          
+            .footer-social-icons a {
+              text-decoration: none;
+            }
+          }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-2" href="/">Neeraj Prajapat</a>
+        <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Fullscreen Modal for Mobile -->
+<div class="fullscreen-navbar" id="fullscreenNavbar">
+    <button class="close-btn" aria-label="Close">✖</button>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+        </li>
+    </ul>
+</div>
+
+
+<!-- Profile Section -->
+<section id="profile" class="container mt-5 d-flex flex-column flex-md-row align-items-center">
+    <div class="order-2 order-md-1 text-center text-md-start mb-3 mb-md-0">
+        <h1>Neeraj Prajapat</h1>
+        <p>Full Stack Developer | Algo Trading Enthusiast</p>
+        <!-- <p class="text-center">From IIT Madras</p> -->
+    </div>
+    <div class="order-1 order-md-2">
+        <img src="./neeraj_kumar.jpg" alt="Neeraj Prajapat" class="profile-img">
+    </div>
+</section>
+
+
+
+<!-- Projects Section -->
+<section id="projects" class="container">
+    <h2>My Projects</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Project 1 -->
+        <!-- <div class="col">
+            <div class="project-card">
+                <img src="/projecta-algolyte.png" alt="Project Screenshot">
+                <div class="project-links">
+                    <a href="https://github.com/Neeraj-prajapat/Ecommerce-Website-General-CSS" target="_blank">GitHub <span>🚀</span></a>
+                    <a href="https://projecta.algolyte.com" target="_blank">Live Project <span>🌐</span></a>
+                </div>
+            </div>
+        </div> -->
+        
+        <div class="col">
+            <a href="https://specific-page-url.com" class="project-card-link">
+                <div class="project-card">
+                    <div class="media-container">
+                        <!-- Video Element -->
+                        <video   muted loop poster="/projectb-algolyte.png">
+                            <source src="/deviltrader-projectb-algolyte.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Neeraj-prajapat/DevilTrader-public" target="_blank">GitHub <span>🚀</span></a>
+                        <a href="https://projectb.algolyte.com" target="_blank">Live Project <span>🌐</span></a>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer-bg">
+    <div class="container">
+        <div class="row">
+
+            <!-- Company Info -->
+            <div class="col-lg-3 col-12">
+                <h3 class="text-center text-lg-start">Neeraj Prajapat</h3>
+                <a href="mailto:neerajkumar001122op@gmail.com ">
+                    <i class="fas fa-envelope mail-icons"></i> neerajkumar001122op@gmail.com
+                </a>
+            </div>
+
+            <!-- Subscription Form -->
+            <div class="col-lg-3 my-5 my-lg-0">
+                <h3 class="text-center text-lg-start">Subscribe to get important updates</h3>
+                <form action="#">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="YOUR E-MAIL"
+                        class="form-control mb-2"
+                    />
+                    <input
+                        type="submit"
+                        value="Subscribe"
+                        class="btn btn-primary mx-auto"
+                    />
+                </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-lg-3 col-6">
+                <h3>Follow Us</h3>
+                <div class="footer-social-icons">
+                    <a href="https://github.com/Neeraj-prajapat" target="_blank">
+                        <i class="fab fa-github icons"></i>
+                    </a>
+                    
+                    <!-- <i class="fab fa-instagram icons"></i> -->
+                    <a href="https://www.linkedin.com/in/neeraj-kumar-4b4823332/" target="_blank">
+                        <i class="fab fa-linkedin icons"></i>
+                      </a>
+                    <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-light"
+                    >
+                        <i class="fab fa-youtube icons"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-6">
+                <h3> <i class="fas fa-phone"></i> Call Us</h3>
+                <h4>+91 7689005391</h4>
+            </div>
+
+        </div>
+
+        <hr class="my-4 border-light" />
+        <div class="row">
+            <div class="col-md-8">
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <p>
+                        &copy; <span id="year"></span> Neeraj Prajapat. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center align-items-md-end mt-3 mt-md-0">
+                    <a href="/privacy-policy.html" class=" privacy-link">
+                        <p class="mb-0">Privacy Policy</p>
+                    </a>
+                    <a href="/terms-conditions.html" class=" privacy-link">
+                        <p class="mb-0">Terms & Conditions</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS and custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Ensure the DOM is fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('.navbar-toggler');
+        const fullscreenNavbar = document.querySelector('.fullscreen-navbar');
+        const closeButton = document.querySelector('.close-btn');
+
+        // Check if elements exist before adding event listeners
+        if (toggleButton && fullscreenNavbar && closeButton) {
+            // Toggle the fullscreen navbar on toggle button click
+            toggleButton.addEventListener('click', () => {
+                fullscreenNavbar.classList.toggle('show');
+            });
+
+            // Close the fullscreen navbar on close button click
+            closeButton.addEventListener('click', () => {
+                fullscreenNavbar.classList.remove('show');
+            });
+        } else {
+            console.warn('Navbar elements not found. Please check your HTML structure.');
+        }
+    });
+    
+    // Update current year dynamically
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script>
+    const videoElement = document.querySelector('.media-container video');
+
+    // Play video when hovering
+    document.querySelector('.media-container').addEventListener('mouseenter', () => {
+        videoElement.play();
+    });
+
+    // Pause video when not hovering
+    document.querySelector('.media-container').addEventListener('mouseleave', () => {
+        videoElement.pause();
+    });
+</script>
+
+
+</body>
+</html>
