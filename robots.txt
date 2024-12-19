@@ -4,4 +4,4 @@ Disallow: /practice.html
 
 
 # Sitemap location (if you have a sitemap.xml file)
-Sitemap: https://neerajprajapat/sitemap.xml
+Sitemap: https://neerajprajapat.me/sitemap.xml
