@@ -2,10 +2,6 @@
 User-agent: *
 Disallow: /practice.html
 
-# Optionally, you can specify individual pages or directories to block (if necessary)
-# For example, to block a specific directory or page:
-# Disallow: /private-directory/
-# Disallow: /some-page.html
 
 # Sitemap location (if you have a sitemap.xml file)
-Sitemap: https://neeraj-prajapat.github.io/sitemap.xml
+Sitemap: https://neerajprajapat/sitemap.xml
